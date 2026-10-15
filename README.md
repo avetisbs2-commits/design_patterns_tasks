@@ -8,7 +8,7 @@ The modules will grow from simple to harder topics:
 
 ```text
 creational patterns   (singleton, factory, builder, immutable)
-structural patterns   (adapter, decorator, facade ...)
+structural patterns   (bridge, filter, decorator, facade, proxy)
 behavioral patterns   (strategy, observer, command ...)
 ```
 
@@ -19,7 +19,11 @@ design_patterns_tasks/
 ├── README.md
 ├── pom.xml
 ├── .gitignore
-└── creational-patterns/
+├── creational-patterns/
+│   ├── README.md
+│   ├── pom.xml
+│   └── src/
+└── structural-patterns/
     ├── README.md
     ├── pom.xml
     └── src/
@@ -29,6 +33,7 @@ design_patterns_tasks/
 
 ```text
 creational-patterns   - Singleton, Factory, Builder, Immutable
+structural-patterns   - Bridge, Filter, Decorator, Facade, Proxy
 ```
 
 ## What You Need
@@ -45,15 +50,22 @@ In IntelliJ: open the `design_patterns_tasks` folder as a Maven project, then ru
 In the terminal:
 
 ```bash
-cd creational-patterns
+cd creational-patterns        # or structural-patterns
 mvn -q compile
-java -cp target/classes com.example.patterns.Main
+java -cp target/classes com.example.patterns.Main        # creational-patterns
+java -cp target/classes com.example.structural.Main      # structural-patterns
 ```
 
 ## Run The Tests
 
 ```bash
 mvn test
+```
+
+Run the tests of one module only:
+
+```bash
+mvn test -pl structural-patterns
 ```
 
 Run one test class only:
