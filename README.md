@@ -10,6 +10,7 @@ The modules will grow from simple to harder topics:
 creational patterns   (singleton, factory, builder, immutable)
 structural patterns   (bridge, filter, decorator, facade, proxy)
 behavioral patterns   (strategy, observer, command ...)
+SOLID principles      (single responsibility, open/closed, liskov, interface segregation, dependency inversion)
 ```
 
 ## Project Structure
@@ -23,7 +24,11 @@ design_patterns_tasks/
 │   ├── README.md
 │   ├── pom.xml
 │   └── src/
-└── structural-patterns/
+├── structural-patterns/
+│   ├── README.md
+│   ├── pom.xml
+│   └── src/
+└── solid-principles/
     ├── README.md
     ├── pom.xml
     └── src/
@@ -34,6 +39,7 @@ design_patterns_tasks/
 ```text
 creational-patterns   - Singleton, Factory, Builder, Immutable
 structural-patterns   - Bridge, Filter, Decorator, Facade, Proxy
+solid-principles      - Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion
 ```
 
 ## What You Need
@@ -50,10 +56,11 @@ In IntelliJ: open the `design_patterns_tasks` folder as a Maven project, then ru
 In the terminal:
 
 ```bash
-cd creational-patterns        # or structural-patterns
+cd creational-patterns        # or structural-patterns, solid-principles
 mvn -q compile
 java -cp target/classes com.example.patterns.Main        # creational-patterns
 java -cp target/classes com.example.structural.Main      # structural-patterns
+java -cp target/classes com.example.solid.Main           # solid-principles
 ```
 
 ## Run The Tests
@@ -65,7 +72,7 @@ mvn test
 Run the tests of one module only:
 
 ```bash
-mvn test -pl structural-patterns
+mvn test -pl solid-principles
 ```
 
 Run one test class only:
