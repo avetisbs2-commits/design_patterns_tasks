@@ -51,7 +51,7 @@ class BuilderTest {
 
     @Test
     void build_withoutSize_throwsIllegalStateException() {
-        assertThrows(IllegalStateException.class,
+            assertThrows(IllegalStateException.class,
                 () -> new Pizza.Builder().cheese(true).build());
     }
 

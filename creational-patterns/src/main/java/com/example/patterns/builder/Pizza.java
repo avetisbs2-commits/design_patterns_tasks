@@ -62,22 +62,26 @@ public class Pizza {
 
         public Builder size(String size) {
             // TODO: save the size in the field, then return this.
-            return this;            // TEMPORARY - it does not save anything yet
+            this.size = size;
+            return this;
         }
 
         public Builder cheese(boolean cheese) {
             // TODO: save the value in the field, then return this.
-            return this;            // TEMPORARY
+            this.cheese = cheese;
+            return this;
         }
 
         public Builder pepperoni(boolean pepperoni) {
             // TODO: save the value in the field, then return this.
-            return this;            // TEMPORARY
+            this.pepperoni = pepperoni;
+            return this;
         }
 
         public Builder mushrooms(boolean mushrooms) {
             // TODO: save the value in the field, then return this.
-            return this;            // TEMPORARY
+            this.mushrooms = mushrooms;
+            return this;
         }
 
         public Pizza build() {
@@ -86,7 +90,10 @@ public class Pizza {
             //    throw new IllegalStateException("Size is required").
             // 2. Create the pizza: return new Pizza(this)
 
-            return null;            // TEMPORARY - delete this line
+            if (this.size == null || size.isEmpty()){
+                throw new IllegalStateException("Size is required");
+            }
+            return new Pizza(this);
         }
     }
 }

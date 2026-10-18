@@ -1,5 +1,6 @@
 package com.example.patterns.immutable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,17 +13,17 @@ import java.util.List;
  * Right now this class is MUTABLE (it can be changed in many ways).
  * STUDENT TASK 4 - make it immutable, step by step.
  */
-public class Order {                                  // TODO 1: make the class final
+public final class Order {                                  // TODO 1: make the class final
 
-    private String customer;                          // TODO 2: make this field final
-    private List<String> items;                       // TODO 2: make this field final
+    private final String customer;                          // TODO 2: make this field final
+    private final List<String> items;                       // TODO 2: make this field final
 
     public Order(String customer, List<String> items) {
         this.customer = customer;
         // TODO 3: save a COPY of the list, not the list itself.
         //         If you save the same list, the caller can still change it from outside.
         //         Use:  List.copyOf(items)   (the copy cannot be changed either)
-        this.items = items;                           // TEMPORARY - this keeps the caller's list
+        this.items = List.copyOf(items);
     }
 
     public String getCustomer() {
@@ -36,13 +37,6 @@ public class Order {                                  // TODO 1: make the class 
 
     // TODO 5: DELETE these two methods. An immutable object has no setters
     //         and no methods that change it.
-    public void setCustomer(String customer) {        // TEMPORARY - delete
-        this.customer = customer;
-    }
-
-    public void addItem(String item) {                // TEMPORARY - delete
-        this.items.add(item);
-    }
 
     // TODO 6: instead of changing the order, return a NEW order that has one more item.
     //         1. Make a new ArrayList with the current items:  new ArrayList<>(items)
@@ -50,6 +44,9 @@ public class Order {                                  // TODO 1: make the class 
     //         3. Return new Order(customer, newList).
     //         The original order must stay the same.
     public Order withItem(String item) {
-        return this;                                  // TEMPORARY - delete this line
+        List<String> newList = new ArrayList<>(this.items);
+        newList.add(item);
+
+        return new Order(this.customer, newList);
     }
 }

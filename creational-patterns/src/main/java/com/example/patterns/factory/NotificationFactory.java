@@ -1,5 +1,7 @@
 package com.example.patterns.factory;
 
+import java.util.Locale;
+
 /**
  * Creates the right kind of Notification from a name.
  * The caller says "email" and gets an EmailNotification, without writing
@@ -20,6 +22,19 @@ public class NotificationFactory {
         //
         // Tip: a switch or an if / else if chain both work.
 
-        return null; // TEMPORARY - delete this line
+        if (type == null){
+            throw new IllegalArgumentException("Type is required");
+        }
+
+        switch (type.toLowerCase(Locale.ROOT)){
+            case "email":
+                return new EmailNotification();
+            case "sms":
+                return new SmsNotification();
+            case "push":
+                return new PushNotification();
+            default:
+                throw new IllegalArgumentException("Unknown type: " + type);
+        }
     }
 }

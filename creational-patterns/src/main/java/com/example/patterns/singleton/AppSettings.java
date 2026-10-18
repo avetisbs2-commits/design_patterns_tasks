@@ -10,17 +10,17 @@ public class AppSettings {
 
     // TODO 1: create the one and only object, here, in a private static final field:
     //
-    //     private static final AppSettings INSTANCE = new AppSettings();
+    private static final AppSettings INSTANCE = new AppSettings();
 
     private String appName = "My App";
 
     // TODO 2: make this constructor private, so nobody outside can write "new AppSettings()".
-    public AppSettings() {          // TEMPORARY - it must be private
+    private AppSettings() {
     }
 
     // TODO 3: return the one and only object (INSTANCE). Do not create a new one here.
     public static AppSettings getInstance() {
-        return new AppSettings();   // TEMPORARY - this creates a NEW object every time
+        return INSTANCE;
     }
 
     // ------------------------------------------------------------------
