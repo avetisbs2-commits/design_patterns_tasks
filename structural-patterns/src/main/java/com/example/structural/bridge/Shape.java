@@ -18,8 +18,7 @@ public abstract class Shape {
 
     protected Shape(Color color) {
         // TODO: save the color in the field:   this.color = color;
-
-        this.color = null;  // TEMPORARY - replace this line
+        this.color = color;
     }
 
     /** Draws the shape and returns the text of the drawing. */

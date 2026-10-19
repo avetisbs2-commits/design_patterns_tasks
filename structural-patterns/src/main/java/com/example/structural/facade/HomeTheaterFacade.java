@@ -26,6 +26,10 @@ public class HomeTheaterFacade {
         //   2. sound.on()
         //   3. sound.setVolume(10)
         //   4. player.play(movie)
+        projector.on();
+        sound.on();
+        sound.setVolume(10);
+        player.play(movie);
     }
 
     public void endMovie() {
@@ -33,5 +37,8 @@ public class HomeTheaterFacade {
         //   1. player.stop()
         //   2. sound.off()
         //   3. projector.off()
+        player.stop();
+        sound.off();
+        projector.off();
     }
 }

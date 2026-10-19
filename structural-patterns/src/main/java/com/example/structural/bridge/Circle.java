@@ -14,6 +14,6 @@ public class Circle extends Shape {
         // TODO: return "Circle filled with " + the color name (color.fill()).
         // Look at Square.java, it is almost the same.
 
-        return "TODO";      // TEMPORARY - delete this line
+        return "Circle filled with " + color.fill();
     }
 }

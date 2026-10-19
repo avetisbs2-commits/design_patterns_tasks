@@ -12,11 +12,16 @@ public class AdultCriteria implements Criteria {
     @Override
     public List<Person> meetCriteria(List<Person> people) {
         // TODO:
-        // 1. Make a new empty list:  List<Person> result = new ArrayList<>();
+        // 1. Make a new empty list:
         // 2. Go through all people with a for loop.
         // 3. If person.getAge() >= 18, add the person to result.
         // 4. Return result.
-
-        return new ArrayList<>();   // TEMPORARY - delete this line
+        List<Person> result = new ArrayList<>();
+        for (Person person : people){
+            if (person.getAge() >= 18 ){
+                result.add(person);
+            }
+        }
+        return result;
     }
 }

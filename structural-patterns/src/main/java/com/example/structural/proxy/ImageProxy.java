@@ -33,7 +33,10 @@ public class ImageProxy implements Image {
         // 1. If realImage is still null, create it:  realImage = new RealImage(fileName, log);
         //    (this is the slow part, so it must happen only ONE time)
         // 2. Ask the real picture to display itself and return the result.
+        if (realImage == null )  {
+            realImage = new RealImage(fileName , log);
+        }
 
-        return "TODO";              // TEMPORARY - delete this line
+        return realImage.display();
     }
 }

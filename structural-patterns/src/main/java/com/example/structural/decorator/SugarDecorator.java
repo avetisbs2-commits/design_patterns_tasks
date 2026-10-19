@@ -14,13 +14,13 @@ public class SugarDecorator extends CoffeeDecorator {
     public String getDescription() {
         // TODO: return the description of the coffee inside, plus ", sugar".
 
-        return super.getDescription();      // TEMPORARY - replace this line
+        return coffee.getDescription() + ", sugar";
     }
 
     @Override
     public double getCost() {
         // TODO: return the cost of the coffee inside, plus 0.20.
 
-        return super.getCost();             // TEMPORARY - replace this line
+        return coffee.getCost() + 0.20;
     }
 }
