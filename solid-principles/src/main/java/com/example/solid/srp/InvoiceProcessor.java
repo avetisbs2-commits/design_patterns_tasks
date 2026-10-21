@@ -25,6 +25,9 @@ public class InvoiceProcessor {
         //       3. repository.save(invoice)
         //       4. return the text
 
-        return "";  // TEMPORARY - delete this line
+        int total = calculator.totalInCents(invoice);
+        String text  = formatter.format(invoice, total);
+        repository.save(invoice);
+        return  text;
     }
 }

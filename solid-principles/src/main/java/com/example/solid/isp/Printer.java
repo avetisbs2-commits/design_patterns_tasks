@@ -6,5 +6,6 @@ package com.example.solid.isp;
  * TODO: add ONE method:   String print(String document);
  */
 public interface Printer {
+    String print(String document);
 
 }

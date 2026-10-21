@@ -14,6 +14,6 @@ public class Eagle implements FlyingBird {
     public String fly() {
         // TODO: return the text "Eagle soars".
 
-        return "";  // TEMPORARY - delete this line
+        return "Eagle soars";
     }
 }

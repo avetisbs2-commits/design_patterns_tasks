@@ -13,15 +13,18 @@ public class InvoiceCalculator {
     /** The sum of (price x quantity) of all items, without tax. */
     public int subtotalInCents(Invoice invoice) {
         // TODO: go through invoice.getItems() and add  item.priceInCents() * item.quantity()
-
-        return 0;   // TEMPORARY - delete this line
+        int subtotal = 0;
+        for (LineItem item : invoice.getItems()) {
+            subtotal += item.priceInCents() * item.quantity();
+        }
+        return subtotal;
     }
 
     /** The subtotal plus the tax. The tax is rounded DOWN (whole cents): subtotal * TAX_PERCENT / 100. */
     public int totalInCents(Invoice invoice) {
         // TODO: 1. get the subtotal (use the method above)
         //       2. return subtotal + subtotal * TAX_PERCENT / 100
-
-        return 0;   // TEMPORARY - delete this line
+        int subtotal = subtotalInCents(invoice);
+        return subtotal + subtotal * TAX_PERCENT / 100;
     }
 }

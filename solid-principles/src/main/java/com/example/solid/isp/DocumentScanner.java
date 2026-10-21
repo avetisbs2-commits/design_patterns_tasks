@@ -6,5 +6,5 @@ package com.example.solid.isp;
  * TODO: add ONE method:   String scan();
  */
 public interface DocumentScanner {
-
+    String scan();
 }

@@ -16,7 +16,10 @@ public class BirdWatcher {
     /** Calls fly() on every bird, in order, and returns the results. */
     public List<String> watch(List<FlyingBird> birds) {
         // TODO: make a new list of results, call bird.fly() for every bird, add each result, return the list.
-
-        return new ArrayList<>();   // TEMPORARY - delete this line
+        List<String> results = new ArrayList<>();
+        for (FlyingBird bird : birds) {
+            results.add(bird.fly());
+        }
+        return results;
     }
 }

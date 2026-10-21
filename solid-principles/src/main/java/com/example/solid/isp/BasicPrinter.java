@@ -10,20 +10,11 @@ package com.example.solid.isp;
  *   1. Change "implements Machine" to "implements Printer".
  *   2. Delete scan() and fax(). A printer must not even have them.
  */
-public class BasicPrinter implements Machine {     // TEMPORARY - this should be "implements Printer"
+public class BasicPrinter implements Printer {
 
     @Override
     public String print(String document) {
         return "Printing: " + document;
     }
 
-    @Override
-    public String scan() {                         // TEMPORARY - delete this method
-        throw new UnsupportedOperationException("This printer cannot scan");
-    }
-
-    @Override
-    public String fax(String document, String number) {   // TEMPORARY - delete this method
-        throw new UnsupportedOperationException("This printer cannot fax");
-    }
 }

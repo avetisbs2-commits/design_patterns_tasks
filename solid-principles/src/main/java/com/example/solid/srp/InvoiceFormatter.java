@@ -25,8 +25,16 @@ public class InvoiceFormatter {
     public String format(Invoice invoice, int totalInCents) {
         // TODO: make a list of lines (List<String> lines = new ArrayList<>()), add the lines
         //       described above (use formatMoney for the money), and return String.join("\n", lines).
+        List<String> lines = new ArrayList<>();
 
-        return "";  // TEMPORARY - delete this line
+        lines.add("Invoice for " + invoice.getCustomer());
+        for (LineItem item : invoice.getItems()) {
+            int itemTotal = item.priceInCents() * item.quantity();
+            lines.add(item.name() + " x" + item.quantity() + " = " + formatMoney(itemTotal));
+        }
+        lines.add("Total: " + formatMoney(totalInCents));
+
+        return String.join("\n", lines);
     }
 
     // PROVIDED - 73800 cents -> "738.00", 1505 -> "15.05"

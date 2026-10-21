@@ -15,13 +15,16 @@ public class DiscountCalculator {
     public int calculate(int priceInCents, Discount discount) {
         // TODO: ask the discount to apply itself to the price:  discount.apply(...)
 
-        return priceInCents;    // TEMPORARY - this ignores the discount. Delete this line.
+        return discount.apply(priceInCents);
     }
 
     /** The sum of all prices, each one after the discount. */
     public int totalFor(List<Integer> pricesInCents, Discount discount) {
         // TODO: go through the prices and add  calculate(price, discount)  to a sum. Return the sum.
-
-        return 0;               // TEMPORARY - delete this line
+        int sum = 0;
+        for (int price : pricesInCents) {
+            sum += calculate(price, discount);
+        }
+        return sum;
     }
 }

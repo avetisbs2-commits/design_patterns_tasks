@@ -6,5 +6,5 @@ package com.example.solid.isp;
  * TODO: add ONE method:   String fax(String document, String number);
  */
 public interface FaxSender {
-
+    String fax(String document, String number);
 }

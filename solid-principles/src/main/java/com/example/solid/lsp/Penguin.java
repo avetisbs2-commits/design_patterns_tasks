@@ -19,19 +19,14 @@ package com.example.solid.lsp;
  *   2. Delete the fly() method (a penguin has no fly()).
  *   3. Make swim() return "Penguin swims".
  */
-public class Penguin implements FlyingBird {      // TEMPORARY - this should be "implements Bird"
+public class Penguin implements Bird {
 
     @Override
     public String getName() {
         return "Penguin";
     }
 
-    @Override
-    public String fly() {                          // TEMPORARY - delete this whole method
-        throw new UnsupportedOperationException("Penguins cannot fly");
-    }
-
     public String swim() {
-        return "";  // TEMPORARY - return "Penguin swims"
+        return "Penguin swims";
     }
 }

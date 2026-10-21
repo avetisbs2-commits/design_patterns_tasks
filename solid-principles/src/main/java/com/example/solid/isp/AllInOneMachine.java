@@ -7,7 +7,7 @@ package com.example.solid.isp;
  *
  * TODO: change "implements Machine" to "implements Printer, DocumentScanner, FaxSender".
  */
-public class AllInOneMachine implements Machine {  // TEMPORARY - this should list the three small interfaces
+public class AllInOneMachine implements Printer, DocumentScanner, FaxSender {
 
     @Override
     public String print(String document) {
